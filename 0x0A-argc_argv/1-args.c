@@ -9,10 +9,10 @@
  * Return:0 on succsess
  */
 
-int main(int arg c, int arg[])
+int main(int argc, char *argv[])
 {
-	void (argv); /*command to ignore argv*/
-	printf("%d\n", arg(c - 1));
+	(void) argv; /*command to ignore argv*/
+	printf("%d\n", argc - 1);
 
 	return (0);
 }
