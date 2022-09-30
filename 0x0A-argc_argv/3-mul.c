@@ -26,5 +26,6 @@ int main(int argc, char *argv[])
 		p = k * m;
 		printf("%d\n", p);
 	}
+
 	return (0);
 }
