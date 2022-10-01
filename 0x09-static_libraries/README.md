@@ -1,3 +1,1 @@
-# **C PROGRAMMING**
-
-_static libraryE_
+# **LIBRARY IN C**
