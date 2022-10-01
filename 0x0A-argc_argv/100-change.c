@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "main.h"
 
 /**
  * main - function to get remainder from a given
@@ -13,7 +12,7 @@
 
 int main(int argc, char *argv[])
 {
-	int total, change, p, k;
+	int total, change, k;
 	int coins[] = {25, 10, 5, 2, 1};
 
 	if (argc != 2)
