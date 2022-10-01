@@ -1,7 +1,6 @@
-#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
+#include "main.h"
 
 /**
  * main - function to get remainder from a given
@@ -42,6 +41,5 @@ int main(int argc, char *argv[])
 		
 	}
 	printf("%d\n", change);
-
 	return (0);
 }
