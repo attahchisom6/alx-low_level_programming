@@ -7,7 +7,7 @@
  * main - function to print even numbers
  * @argc:No of argument passed to function
  * @argv:array of arguments
- * 
+ *
  * Return:0
  */
 
