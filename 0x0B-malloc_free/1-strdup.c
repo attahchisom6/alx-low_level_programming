@@ -15,6 +15,10 @@ char *_strdup(char *str)
 	int k, m, p;
 	char *strc; /*new to be copied from str*/
 
+	if (str == NULL)
+	{
+		return (NULL);
+	}
 	p = 0;
 	while (str[p] != '\0')
 	{
@@ -25,10 +29,6 @@ char *_strdup(char *str)
 	strc = malloc(k * sizeof(char));
 	for (m = 0; m < k; m++)
 	{
-		if (str == NULL)
-		{
-			return (NULL);
-		}
 		strc[m] = str[m];
 	}
 
