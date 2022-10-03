@@ -31,6 +31,6 @@ char *_strdup(char *str)
 		}
 		strc[m] = str[m];
 	}
-	free(strc);
+
 	return (strc);
 }
