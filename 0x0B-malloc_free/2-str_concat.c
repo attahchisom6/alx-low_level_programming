@@ -15,17 +15,21 @@ char *str_concat(char *s1, char *s2)
 	unsigned int p, k, q;
 	char *buffer;
 
-	if (s2 == NULL || s1 == NULL)
+	if (s1 == NULL)
 	{
-		return ("");
+		s1 = "";
+	}
+	if (s2 == NULL)
+	{
+		s2 == "";
 	}
 	p = 0;
 	while (s1[p] != '\0')
 	{
 		p++; /*read through the destination string
-		       without null terminator to get lenght of s1*/
+		      * without null terminator to get lenght of s1*/
 	}
-	k = 0;	
+	k = 0;
 	while (s2[k] != '\0')
 	{
 		k++; /*get lenght of s2*/
