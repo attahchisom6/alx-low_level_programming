@@ -5,14 +5,14 @@
 /**
  * argstostr - A function that will concertenale all the arguments
  * provided to it separated by a new line
- * @ac - Number of argument provided
+ * @ac:Number of argument provided
  * @v:vector or array containing all this argument
  *
- * Rerurn:pointer to new comcertenated strings of argument
+ * Return:pointer to new comcertenated strings of argument
  */
 char *argstostr(int ac, char **av)
 {
-	int k, p, q , r;
+	int k, p, q, r;
 	char *str;
 
 	k = 0, p = 0, q = 0, r = 0;
