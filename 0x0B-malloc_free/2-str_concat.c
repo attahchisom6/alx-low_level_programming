@@ -26,8 +26,8 @@ char *str_concat(char *s1, char *s2)
 	p = 0;
 	while (s1[p] != '\0')
 	{
-		p++; /*read through the destination string
-		      * without null terminator to get lenght of s1*/
+		p++; /*read through the destination string*/
+/*without null terminator to get lenght of s1*/
 	}
 	k = 0;
 	while (s2[k] != '\0')
