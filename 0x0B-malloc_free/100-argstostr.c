@@ -6,7 +6,7 @@
  * argstostr - A function that will concertenale all the arguments
  * provided to it separated by a new line
  * @ac:Number of argument provided
- * @v:vector or array containing all this argument
+ * @av:vector or array containing all this argument
  *
  * Return:pointer to new comcertenated strings of argument
  */
