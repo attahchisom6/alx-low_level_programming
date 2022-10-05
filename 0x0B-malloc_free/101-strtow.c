@@ -2,9 +2,10 @@
 #include <stdlib.h>
 
 /**
- * break_string - function to break a string separated by space or null terminated
- * @str:string to break into words
- * 
+ * break_string - function to break a string separated
+ * by space or null terminated
+ * @s:string to break into words
+ *
  * Return:The broken words
  */
 
@@ -24,7 +25,7 @@ int count_word(char *s)
 		}
 		p++;
 	}
-	return( w);
+	return(w);
 }
 
 /**
