@@ -52,7 +52,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	buffer = malloc(g * sizeof(char));
 	if (buffer == NULL)
 		return (0);
-	for (x = 0; s1[x] != '\0'; x++)
+	for (x = 0; x < p; x++)
 		buffer[x] = s1[x];
 	for (; x < (n + p); x++)
 		buffer[x] = s2[x - p];
