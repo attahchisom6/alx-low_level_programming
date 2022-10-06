@@ -29,7 +29,7 @@ int *array_range(int min, int max)
 	}
 
 
-	while (k >= min && k <= max)
+	while (k >= max - min)
 	{
 		buffer[k] = k;
 		k++;
