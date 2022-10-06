@@ -27,7 +27,7 @@ char *_memset(char *buffer, char b, unsigned int n)
 /**
  * _calloc - A function to assign memory to an array
  * @nmemb:each element of the array
- * @size of the array
+ * @size:size of the array
  *
  * Return:pointer to each space allocated to members of the array
  */
@@ -37,7 +37,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	void *array;
 
 	if (nmemb == 0 || size == 0)
-		return NULL;
+		return (NULL);
 	arr_size = nmemb * size;
 	array = malloc(arr_size);
 	if (array == NULL)
