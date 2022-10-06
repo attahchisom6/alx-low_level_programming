@@ -15,7 +15,7 @@
 int *array_range(int min, int max)
 {
 	int *buffer;
-	int k = 0, p;
+	int k = 0, p, g = min;
 
 	if (min > max)
 		return (NULL);
@@ -28,11 +28,7 @@ int *array_range(int min, int max)
 		return (NULL);
 	}
 
-
-	while (k >= max - min)
-	{
-		buffer[k] = k;
-		k++;
-	}
+	while (k <=  max - min)
+		buffer[k++] = g++;
 	return (buffer);
 }
