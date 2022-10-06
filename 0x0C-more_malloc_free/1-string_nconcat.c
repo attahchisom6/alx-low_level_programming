@@ -6,7 +6,7 @@
  * _strlen - funtion to measure the lengt of string
  * @str:string to measure
  *
- * return:lengt of string
+ * Return:lengt of string
  */
 
 int _strlen(char *str)
@@ -26,6 +26,7 @@ int _strlen(char *str)
  * number of strings
  * @s1:destination string
  * @s2:source string to be concertenated with s1
+ * @n:number of characters to concertenate
  *
  * Return:pointer to concertenated string
  */
@@ -54,7 +55,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	for (x = 0; s1[x] != '\0'; x++)
 		buffer[x] = s1[x];
 	for (; x < (n + p); x++)
-		buffer[x] = s2[x- p];
+		buffer[x] = s2[x - p];
 	buffer[x] = '\0';
 	return (buffer);
 }
