@@ -45,7 +45,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		k = _strlen(&s2[m]);
 		m++;
 	}
-	g = p + k + 1; /*to include the null terminator*/
+	if (n > k)
+		n = k;
+	g = p + n + 1; /*to include the null terminator*/
 	buffer = malloc(g * sizeof(char));
 	if (buffer == NULL)
 		return (NULL);
