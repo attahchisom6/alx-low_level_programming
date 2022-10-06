@@ -31,7 +31,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	g = p + n + 1; /*to include the null terminator*/
 	buffer = malloc(g * sizeof(char));
 	if (buffer == NULL)
-		return (0);
+		return (NULL);
 	for (x = 0; x < p; x++)
 	{
 		buffer[x] = s1[x];
