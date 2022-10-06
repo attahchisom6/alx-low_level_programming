@@ -4,7 +4,7 @@
 
 /**
  * _realloc - function to reallocate a new memory to an old one
- * @prtr:lointer to original size of memory
+ * @ptr:lointer to original size of memory
  * @old_size:orginal size of memory
  * @new_size:new size of memory
  *
@@ -14,6 +14,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	unsigned int k;
 	char *copied_buffer, *reallock;
+
 	if (ptr != NULL)
 	{
 		copied_buffer = ptr;
