@@ -53,9 +53,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (buffer == NULL)
 		return (0);
 	for (x = 0; x < p; x++)
+	{
 		buffer[x] = s1[x];
+	}
 	for (; x < (n + p); x++)
+	{
 		buffer[x] = s2[x - p];
+	}
 	buffer[x] = '\0';
 	return (buffer);
 }
