@@ -3,25 +3,6 @@
 #include <stdio.h>
 
 /**
- * _strlen - funtion to measure the lengt of string
- * @str:string to measure
- *
- * Return:lengt of string
- */
-
-int _strlen(char *str)
-{
-	int p;
-
-	p = 0;
-	while (str[p] != '\0')
-	{
-		p++;
-	}
-	return (p);
-}
-
-/**
  * string_nconcat - this function will concertenate a
  * number of strings
  * @s1:destination string
@@ -33,19 +14,18 @@ int _strlen(char *str)
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int k, g, m = 0, p, x;
+	unsigned int k = 0, g, p = 0, x;
 	char *buffer;
 
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
-	p = _strlen(s1);
-	while (s2[m] != '\0' && m < n)
-	{
-		k = _strlen(&s2[m]);
-		m++;
-	}
+
+	while (s1[p] != '\0')
+		p++;
+	while (s2[k] != '\0')
+		k++;
 	if (n > k)
 		n = k;
 	g = p + n + 1; /*to include the null terminator*/
