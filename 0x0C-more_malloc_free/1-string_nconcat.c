@@ -50,11 +50,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	g = p + n + 1; /*to include the null terminator*/
 	buffer = malloc(g * sizeof(char));
 	if (buffer == NULL)
-		return (NULL);
+		return (0);
 	for (x = 0; s1[x] != '\0'; x++)
 		buffer[x] = s1[x];
-	for (m = 0; m < (n + p) && s2[m] != '\0'; m++, x++)
-		buffer[x] = s2[m];
+	for (; x < (n + p); x++)
+		buffer[x] = s2[x- p];
 	buffer[x] = '\0';
 	return (buffer);
 }
