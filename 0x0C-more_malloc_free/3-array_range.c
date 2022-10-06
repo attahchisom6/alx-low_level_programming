@@ -15,7 +15,7 @@
 int *array_range(int min, int max)
 {
 	int *buffer;
-	int k, p;
+	int k = 0, p;
 
 	if (min > max)
 		return (NULL);
@@ -28,8 +28,8 @@ int *array_range(int min, int max)
 		return (NULL);
 	}
 
-	k = min;
-	while (k <= max)
+
+	while (k >= min && k <= max)
 	{
 		buffer[k] = k;
 		k++;
