@@ -3,22 +3,6 @@
 #include <stdlib.h>
 
 /**
- * _atoi - function to convert character  to integer
- * @c:character whose numerical values we seek
- *
- * Return:numerical value of string
- */
-
-int _atoi(char c)
-{
-	unsigned int result;
-
-	if (c <= '9' && c >= '0')
-		result = c - '0';
-	return (result);
-}
-
-/**
  * isNumeral - A fuction that checks if a string is a number
  * or not
  * @argv:string to check
