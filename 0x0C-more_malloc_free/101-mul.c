@@ -59,7 +59,7 @@ void *_calloc(unsigned int memb, unsigned int size)
 }
 
 /**
- * mul_arr -function to mutiply arrays
+ * mul_array -function to mutiply arrays
  * @a1:array1
  * @len1:lenght of a1
  * @a2:a character type data
