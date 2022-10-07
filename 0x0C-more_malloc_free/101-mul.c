@@ -71,12 +71,12 @@ void *_calloc(unsigned int memb, unsigned int size)
 
 void *mul_array(char *a1, int len1, char a2, char *a3, int lena)
 {
-	int mul = 0, k , p;
+	int mul = 0, k, p;
 
 	k = lena;
 	for (p = len1 - 1; p >= 0; p--)
 	{
-		mul += (a1[p] -'0') * (a2 - '0') + (a3[k] - '0');
+		mul += (a1[p] - '0') * (a2 - '0') + (a3[k] - '0');
 		a3[k] = (mul % 10) + '0';
 		mul /= 10;
 		k--;
@@ -96,7 +96,7 @@ void *mul_array(char *a1, int len1, char a2, char *a3, int lena)
 /**
  * print_array - function to print elents of an array
  * @arr:array of elements
- * n:number of elements of the array
+ * @n:number of elements of the array
  *
  * Return:void
  */
@@ -111,9 +111,9 @@ void print_array(char *arr, int n)
 	}
 	for (; k < n; k++)
 	{
-		putchar(arr[k]);
+		_putchar(arr[k]);
 	}
-	putchar('\n');
+	_putchar('\n');
 }
 
 /**
@@ -134,9 +134,9 @@ int main(int argc, char *argv[])
 	{
 		for (k = 0; k < 6; k++)
 		{
-			putchar(E[k]);
+			_putchar(E[k]);
 		}
-		exit (98);
+		exit(98);
 	}
 	for (len1 = 0; argv[1][len1]; len1++)
 	;
