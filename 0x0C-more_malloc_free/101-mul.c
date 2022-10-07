@@ -37,7 +37,7 @@ void *_calloc(unsigned int memb, unsigned int size)
 		return (NULL);
 
 	for (k = 0; k < (size * memb); k++)
-		buffer[k] = '0';
+		buffer[k] = 0;
 
 	return (buffer);
 }
