@@ -1,124 +1,116 @@
-#include "main.h"
 #include <stdio.h>
+#include "main.h"
 #include <stdlib.h>
 
 /**
- * isNumeral - A fuction that checks if a string is a number
- * or not
- * @argv:string to check
- *
- * Return:0
- */
-
-int isNumeral(char *argv)
+ * _isNumber - Define if a string is a number.
+ * @argv: Pointer to string.
+ * Return: success (0).
+ **/
+int _isNumber(char *argv)
 {
-	int k;
+	int i;
 
-	for (k = 0; argv[k]; k++)
-		if (argv[k] < 48 || argv[k] > 57)
+	for (i = 0; argv[i]; i++)
+		if (argv[i] < 48 || argv[i] > 57)
 			return (1);
 	return (0);
 }
 
 /**
- * _calloc - allocate memory to an array
- * @memb:elements of the array
- * @size:size of the array
- *
- * Return:pointer to the array
- */
-void *_calloc(unsigned int memb, unsigned int size)
-{
-	char *buffer;
-	unsigned int k;
+ *_calloc - allocate array of size * nmemb.
+ * @nmemb: number of elements.
+ * @size: size of element.
+ * Return: pointer to array.
+ **/
 
-	buffer = malloc(size * memb);
-	if (buffer == NULL)
+void *_calloc(unsigned int nmemb, unsigned int size)
+{
+	char *tab;
+	unsigned int i;
+
+	tab = malloc(size * nmemb);
+
+	if (tab == NULL)
 		return (NULL);
 
-	for (k = 0; k < (size * memb); k++)
-		buffer[k] = 0;
+	for (i = 0; i < (size * nmemb); i++)
+		tab[i] = '0';
 
-	return (buffer);
+	return (tab);
 }
 
 /**
- * mul_array -function to mutiply arrays
- * @a1:array1
- * @len1:lenght of a1
- * @a2:a character type data
- * @a3:array for result
- * @lena:lenght of array a3
- *
- * Return:pointer to result
- */
+ * mul_array - multiply two arrays.
+ * @a1: first array.
+ * @len1: length of array a1.
+ * @a2:  char.
+ * @a3: array for result.
+ * @lena: length of array a3.
+ * Return: pointer to array.
+ **/
 
 void *mul_array(char *a1, int len1, char a2, char *a3, int lena)
 {
-	int mul = 0, k, p;
+	int mul = 0, i, k;
 
 	k = lena;
-	for (p = len1 - 1; p >= 0; p--)
+	for (i = len1 - 1; i >= 0 ; i--)
 	{
-		mul += (a1[p] - '0') * (a2 - '0') + (a3[k] - '0');
+		mul += (a1[i] - '0') * (a2 - '0') + (a3[k] - '0');
 		a3[k] = (mul % 10) + '0';
 		mul /= 10;
 		k--;
 	}
 
-	while (mul != 0)
-	{
-		mul += a3[k] - '0';
-		a3[k] = (mul % 10) + '0';
-		mul /= 10;
-		k--;
-	}
+		while (mul != 0)
+		{
+			mul += a3[k] - '0';
+			a3[k] = (mul % 10) + '0';
+			mul /= 10;
+			k--;
+		}
 
 	return (a3);
 }
-
 /**
- * print_array - function to print elents of an array
- * @arr:array of elements
- * @n:number of elements of the array
- *
- * Return:void
- */
-
-void print_array(char *arr, int n)
+ * print_array - print all digits of array.
+ * @nb: number of elements to print.
+ * @a: array of elements.
+ **/
+void print_array(char *a, int nb)
 {
-	int k;
+	int i = 0;
 
-	while (arr[k] == '0' && (k + 1) < n)
+	while (a[i] == '0' && (i + 1) < nb)
 	{
-		k++;
+		i++;
 	}
-	for (; k < n; k++)
+	for (; i < nb; i++)
 	{
-		putchar(arr[k]);
+		putchar(a[i]);
 	}
 	putchar('\n');
 }
 
 /**
- * main - function to get the multiplucation of two numbers
- * @argv:array containing mutiplying number
- * @argc:Number of the arguments
- *
- * Return:0
+ *main - print the multiplication of 2 numbers.
+ *@argc: array length.
+ *@argv: array.
+ *Return: 0.
  */
 
 int main(int argc, char *argv[])
 {
-	int k, c, len1, len2, result;
-	char *mul_table;
+	int i, c, len1, len2, lenres;
 	char E[6] = {'E', 'r', 'r', 'o', 'r', '\n'};
+	char *tabres;
 
-	if (argc != 3 || isNumeral(argv[1]) == 1 || isNumeral(argv[2]) == 1)
+	if (argc != 3 || _isNumber(argv[1]) == 1 || _isNumber(argv[2]) == 1)
 	{
-		for (k = 0; k < 6; k++)
+		for (i = 0; i < 6; i++)
 		{
-			putchar(E[k]);
+			putchar(E[i]);
 		}
 		exit(98);
 	}
@@ -126,20 +118,20 @@ int main(int argc, char *argv[])
 	;
 	for (len2 = 0; argv[2][len2]; len2++)
 	;
-	result = len1 + len2;
-	mul_table = _calloc(result, sizeof(int));
-	if (mul_table == NULL)
+	lenres = len1 + len2;
+	tabres = _calloc(lenres, sizeof(int));
+	if (tabres == NULL)
 	{
-		free(mul_table);
+		free(tabres);
 		return (0);
 	}
-	for (k = len2 - 1, c = 0; k >= 0; k--)
+	for (i = len2 - 1, c = 0; i >= 0; i--)
 	{
-	mul_table = mul_array(argv[1], len1, argv[2][k], mul_table, (result - 1 - c));
+	tabres = mul_array(argv[1], len1, argv[2][i], tabres, (lenres - 1 - c));
 	c++;
 	}
-	print_array(mul_table, result);
-	free(mul_table);
+	print_array(tabres, lenres);
+	free(tabres);
 	exit(EXIT_SUCCESS);
 	return (0);
 }
