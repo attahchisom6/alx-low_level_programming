@@ -19,11 +19,11 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	{
 		copied_buffer = ptr;
 	}
-	else if (ptr == NULL)
+	else
 	{
 		return (malloc(new_size));
 	}
-	if (old_size == new_size)
+	if (new_size == old_size)
 	{
 		return (ptr);
 	}
@@ -31,18 +31,19 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	{
 		free(ptr);
 
-		return (NULL);
+		return (0);
 	}
 
 	reallock = malloc(new_size);
 	if (reallock == NULL)
 	{
-		return (NULL);
+		return (0);
 	}
-	for (k = 0; k < new_size || k < old_size; k++)
+	for (k = 0; k < (old_size || k < new_size); k++)
 	{
 		reallock[k] = copied_buffer[k];
 	}
 	free(ptr);
+
 	return (reallock);
 }
