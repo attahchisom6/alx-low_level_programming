@@ -126,7 +126,7 @@ void print_array(char *arr, int n)
 
 int main(int argc, char *argv[])
 {
-	int k , c, len1, len2, result;
+	int k, c, len1, len2, result;
 	char *mul_table;
 	char E[6] = {'E', 'r', 'r', 'o', 'r', '\n'};
 
