@@ -111,9 +111,9 @@ void print_array(char *arr, int n)
 	}
 	for (; k < n; k++)
 	{
-		_putchar(arr[k]);
+		putchar(arr[k]);
 	}
-	_putchar('\n');
+	putchar('\n');
 }
 
 /**
@@ -134,7 +134,7 @@ int main(int argc, char *argv[])
 	{
 		for (k = 0; k < 6; k++)
 		{
-			_putchar(E[k]);
+			putchar(E[k]);
 		}
 		exit(98);
 	}
