@@ -1,5 +1,6 @@
 #include "dog.h"
 #include <atdio.h>
+#include <stdlib.h>
 
 /**
  * free_dog - function to free all the spaces in heap memory
