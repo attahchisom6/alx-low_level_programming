@@ -5,8 +5,9 @@
 /**
  * free_dog - function to free all the spaces in heap memory
  * due to malloc allocation
- * @dog_t:atruct variable
  * @d:pointer to struct variable
+ *
+ * Return:void
  */
 
 void free_dog(dog_t *d)
