@@ -8,9 +8,7 @@
  * @name:name of new dog
  * @age:age of new dog
  * @owner:owner of new dog
- * 
- * Return:if function fails otherwise return pointer to
- * new dog
+ * Return:pointer to dog
  */
 
 dog_t *new_dog(char *name, float age, char *owner)
@@ -22,7 +20,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 		p++; /*read to the end of name*/
 	while (owner[k] != '\0')
 		k++;
-
 	/*create space to store variables of the new struct*/
 	/*note new struct is already given as dog_t*/
 	new_pet = malloc(sizeof(dog_t));
@@ -44,7 +41,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 		new_pet->name[g] = name[g];
 	}
 	new_pet->age = age;
-
 	/*store the owner variable in new_pet*/
 	new_pet->owner = malloc(k * sizeof(new_pet->owner));
 	if (new_pet->owner == NULL)
