@@ -20,35 +20,3 @@ void print_name(char *name, void (*f)(char *))
 		f(name);
 	}
 }
-
-void print_namee(char *s)
-{
-	printf("Hello, my name is %s\n", s);
-}
-
-void print_uprname(char *s)
-{
-	int k;
-	
-	while (s[k] != '\0')
-	{
-		if (s[k] >= 'a' && s[k] <= 'z')
-		{
-			putchar(s[k] - 32);
-		}
-		else
-		{
-			putchar(s[k]);
-		}
-		k++;
-	}
-}
-
-int main(void)
-{
-
-	print_name("Bob", print_namee);
-	print_name("mr Afam", print_uprname);
-	printf("\n");
-	return (0);
-}
