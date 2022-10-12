@@ -1,5 +1,6 @@
 #include "fpointer.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * print_name - this function will print my name, when inputed
