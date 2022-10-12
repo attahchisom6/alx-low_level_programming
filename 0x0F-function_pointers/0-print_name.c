@@ -1,6 +1,5 @@
 #include "fpointer.h"
 #include <stdio.h>
-#include <stdlib.h>
 
 /**
  * print_name - this function will print my name, when inputed
@@ -13,7 +12,7 @@
 void print_name(char *name, void (*f)(char *))
 {
 
-	if (f == NULL || name == NULL)
+	if (!f || !name)
 		return;
 
 	f(name);
