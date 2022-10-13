@@ -30,6 +30,7 @@ int main(int argc, char **argv)
 		exit(2);
 	}
 
+	k = 0;
 	while (k < nbytes)
 	{
 		if (k == (nbytes - 1))
