@@ -16,7 +16,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	unsigned int k;
 
-	va_list(ap);
+	va_list ap;
 
 	if (separator == NULL)
 		return;
@@ -33,6 +33,6 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		}
 		k++;
 	}
-	va_end(ap);
 	printf("\n");
+	va_end(ap);
 }
