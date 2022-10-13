@@ -32,14 +32,13 @@ int main(int argc, char **argv)
 
 	while (k < nbytes)
 	{
-		while (k < (nbytes - 1))
+		if (k == (nbytes - 1))
 		{
-			printf("%02x ", buffer[k]);
-			k++;
+			printf("%02x\n", buffer[k]);
+			 break;
 		}
-		printf("%02x\n", buffer[k]);
+		printf("%02x ", buffer[k]);
 		k++;
-		break;
 	}
 	return (0);
 }
