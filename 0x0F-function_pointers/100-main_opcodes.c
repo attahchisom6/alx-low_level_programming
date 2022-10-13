@@ -14,7 +14,7 @@ int main(int argc, char **argv)
 {
 	int k = 0, nbytes; /*nbytes = number of bytes*/
 	char *buffer;
-	
+
 	k = 0, buffer = (char *)main;
 
 	if (argc != 2)
@@ -22,7 +22,7 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(1);
 	}
-	
+
 	nbytes = atoi(argv[1]);
 	if (nbytes < 0)
 	{
