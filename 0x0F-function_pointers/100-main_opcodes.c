@@ -35,7 +35,7 @@ int main(int argc, char **argv)
 		if (k == (nbytes - 1))
 		{
 			printf("%02x\n", buffer[k]);
-			 break;
+			break;
 		}
 		printf("%02x ", buffer[k]);
 		k++;
