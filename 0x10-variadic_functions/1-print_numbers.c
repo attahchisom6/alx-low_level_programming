@@ -3,7 +3,7 @@
 #include <stdarg.h>
 
 /**
- * print_number - function to print numbers, separated by
+ * print_numbers - function to print numbers, separated by
  * a string
  * @separator:string to separate the numbers
  * @n:first argument
