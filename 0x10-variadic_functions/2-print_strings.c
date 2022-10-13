@@ -15,6 +15,7 @@
 void print_strings(const char *separator, const unsigned int n, ...)
 {
 	unsigned int k;
+	char *s;
 
 	va_list str; /*u can choose this to be anything ap, fd, etc*/
 
@@ -22,7 +23,14 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	k = 0;
 	while (k < n)
 	{
-		printf("%s", va_arg(str, char *));
+		/*note definintion of s has to be in the loop*/
+		/*otherwise, it will always print the first argument*/
+		/*i.e it is not iterated outside loop*/
+		s = va_arg(str, char *);
+		if (s == NULL)
+			printf("(nil)");
+		else
+			printf("%s", s);
 		if (separator != NULL && k < (n - 1))
 		{
 			printf("%s", separator);
