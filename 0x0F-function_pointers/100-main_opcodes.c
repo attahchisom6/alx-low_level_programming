@@ -35,10 +35,10 @@ int main(int argc, char **argv)
 	{
 		if (k == (nbytes - 1))
 		{
-			printf("%02x\n", buffer[k]);
+			printf("%02hhx\n", buffer[k]);
 			break;
 		}
-		printf("%02x ", buffer[k]);
+		printf("%02hhx ", buffer[k]);
 		k++;
 	}
 	return (0);
