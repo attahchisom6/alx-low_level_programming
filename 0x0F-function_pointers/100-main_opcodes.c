@@ -33,12 +33,12 @@ int main(int argc, char **argv)
 	k = 0;
 	while (k < nbytes)
 	{
-		if (k == (nbytes - 1))
+		while (k < (nbytes - 1))
 		{
-			printf("%02hhx\n", buffer[k]);
-			break;
+			printf("%02hhx ", buffer[k]);
+			k++;
 		}
-		printf("%02hhx ", buffer[k]);
+		printf("%02hhx\n", buffer[k]);
 		k++;
 	}
 	return (0);
