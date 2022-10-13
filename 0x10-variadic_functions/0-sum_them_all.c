@@ -9,9 +9,10 @@
  * Return:void
  */
 
-int sum_them_all(const unsigned int n,...)
+int sum_them_all(const unsigned int n, ...)
 {
 	unsigned int k, sum = 0;
+
 	va_list(ap);
 
 	if (n == 0)
@@ -21,7 +22,7 @@ int sum_them_all(const unsigned int n,...)
 	k = 0;
 	while (k < n)
 	{
-		sum = sum + va_arg (ap, int);
+		sum = sum + va_arg(ap, int);
 		k++;
 	}
 	va_end(ap);
