@@ -1,55 +1,56 @@
 #include "variadic_functions.h"
 #include <stdio.h>
-#include <stdarg.h>
 
 /**
- * print_all - this function will print all forms of data types
- * passed to it
- * @format:point to all form of data types
- *
- * Return:void
+ * print_all - prints all
+ * @format: param
  */
-
 void print_all(const char * const format, ...)
 {
-	unsigned int k, p = 0, flag = 0;
-	const char buffer[] = "cifs";
+	va_list valist;
+	unsigned int i = 0, j, k = 0;
 	char *str;
-	va_list all;
+	const char t_arg[] = "cifs";
 
-	va_start(all, format);
-	while (format && format[p])
+	va_start(valist, format);
+	while (format && format[i])
 	{
-		k = 0;
-		while (buffer[k])
+		j = 0;
+		while (t_arg[j])
 		{
-			if (format[p] == buffer[k] && flag)
+			if (format[i] == t_arg[j] && k)
 			{
 				printf(", ");
 				break;
-			} k++;
+			} j++;
 		}
-		switch (format[p])
+		switch (format[i])
 		{
 		case 'c':
-			printf("%c", va_arg(all, int)), flag = 1; /*promote float to double*/
+			printf("%c", va_arg(valist, int)), k = 1;
 			break;
 		case 'i':
-			printf("%d", va_arg(all, int)), flag = 1;
+			printf("%d", va_arg(valist, int)), k = 1;
 			break;
 		case 'f':
-			printf("%f", va_arg(all, double)), flag = 1;
+			printf("%f", va_arg(valist, double)), k = 1;
 			break;
 		case 's':
-			str = va_arg(all, char *), flag = 1;
-			if (str == NULL)
+			str = va_arg(valist, char *), k = 1;
+			if (!str)
 			{
-				printf("(nill");
+				printf("(nil)");
 				break;
 			}
 			printf("%s", str);
 			break;
-		} p++;
+		} i++;
 	}
-	printf("\n"), va_end(all);
+	printf("\n"), va_end(valist);
+}
+
+int main(void)
+{
+    print_all("ceis", 'B', 3, "stSchool");
+    return (0);
 }
