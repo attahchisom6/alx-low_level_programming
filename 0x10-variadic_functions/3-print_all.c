@@ -53,10 +53,3 @@ void print_all(const char * const format, ...)
 	}
 	printf("\n"), va_end(all);
 }
-
-
-int main(void)
-{
-        print_all("ciels", 'B', 3, "stSchools");
-        return (0);
-}
