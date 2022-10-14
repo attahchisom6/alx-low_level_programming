@@ -1,6 +1,4 @@
 #include "variadic_functions.h"
-#include <stdio.h>
-#include <stdarg.h>
 
 
 /**
@@ -53,4 +51,11 @@ void print_all(const char * const format, ...)
 		} p++;
 	}
 	printf("\n"), va_end(all);
+}
+
+
+int main(void)
+{
+        print_all("ciels", 'B', 3, "stSchools");
+        return (0);
 }
