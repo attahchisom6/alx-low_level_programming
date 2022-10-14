@@ -16,8 +16,8 @@ void print_all(const char * const format, ...)
 	unsigned int k, p = 0, flag = 0;
 	const char buffer[] = "cifs";
 	char *str;
-
 	va_list all;
+
 	va_start(all, format);
 	while (format && format[p])
 	{
@@ -28,7 +28,7 @@ void print_all(const char * const format, ...)
 			{
 				printf(", ");
 				break;
-			}k++;
+			} k++;
 		}
 		switch (format[p])
 		{
@@ -50,7 +50,7 @@ void print_all(const char * const format, ...)
 			}
 			printf("%s", str);
 			break;
-		}p++;
+		} p++;
 	}
 	printf("\n"), va_end(all);
 }
