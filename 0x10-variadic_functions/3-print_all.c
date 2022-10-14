@@ -18,37 +18,29 @@ void print_all(const char * const format, ...)
 	char *str;
 
 	va_list all;
-
 	va_start(all, format);
-	p = 0;
 	while (format && format[p])
 	{
 		k = 0;
-
 		while (buffer[k])
 		{
 			if (format[p] == buffer[k] && flag)
 			{
 				printf(", ");
 				break;
-			}
-			k++;
+			}k++;
 		}
-
 		switch (format[p])
 		{
 		case 'c':
 			printf("%c", va_arg(all, int)), flag = 1; /*promote float to double*/
 			break;
-
 		case 'i':
 			printf("%d", va_arg(all, int)), flag = 1;
 			break;
-
 		case 'f':
 			printf("%f", va_arg(all, double)), flag = 1;
 			break;
-
 		case 's':
 			str = va_arg(all, char *), flag = 1;
 			if (str == NULL)
@@ -58,9 +50,7 @@ void print_all(const char * const format, ...)
 			}
 			printf("%s", str);
 			break;
-		}
-		p++;
+		}p++;
 	}
-	printf("\n");
-	va_end(all);
+	printf("\n"), va_end(all);
 }
