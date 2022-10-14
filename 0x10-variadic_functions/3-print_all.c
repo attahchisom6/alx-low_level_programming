@@ -23,7 +23,7 @@ void print_all(const char * const format, ...)
 		k = 0;
 		while (buffer[k] != '\0')
 		{
-			if (format[p] == buffer[k] && flag)
+			if (format[p] == buffer[k] && flag != 0)
 			{
 				printf(", ");
 				break;
