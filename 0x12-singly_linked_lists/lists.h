@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include <stddef.h>
 /**
  * struct list_s - single linked list
  * @str: string - (malloc'ed string)
