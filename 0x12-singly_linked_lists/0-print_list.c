@@ -2,7 +2,7 @@
 
 /**
  * print_list - A function to print the content of a link
- * @h - reference to head (pointer to head)
+ * @h:reference to head (pointer to head)
  *
  * Return:list to be printed (which is the struct)
  */
