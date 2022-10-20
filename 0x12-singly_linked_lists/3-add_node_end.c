@@ -28,7 +28,7 @@ list_t *add_node_end(list_t **head, const char *str)
 /*mv next of the new node to point to NULL, which shows that*/
 /*link should here*/
 	new->next = NULL;
-/*if the link (head) is empty, then head is the same as new node*/
+/*make end of previous link the new head of new link*/
 	end = *head;/*initialize end to head*/
 	if (end  == NULL)
 		*head = new;
