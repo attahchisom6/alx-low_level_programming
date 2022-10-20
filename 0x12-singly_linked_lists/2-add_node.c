@@ -9,7 +9,7 @@
  * Return:Address of new elemwnt or NULL if it failals
  */
 
-list_t *add_node(list_t **head, char *str)
+list_t *add_node(list_t **head, const char *str)
 {
 	char *s;
 	size_t p;
