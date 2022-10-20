@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * add_note - this function will add a nods to the beginning of
+ * add_node - this function will add a nods to the beginning of
  * a linked list
  * @head:first link
  * @str:string to be added to link we want to add before head
