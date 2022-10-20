@@ -32,10 +32,8 @@ list_t *add_node_end(list_t **head, const char *str)
 	new->next = NULL;
 /*if the link (head) is empty, then head point  to new link*/
 	if (*head == NULL)
-	{
 		*head = new;
-		return (NULL);
-	}
+
 	while (end->next != NULL)
 		end = end->next;
 	end->next = new;
