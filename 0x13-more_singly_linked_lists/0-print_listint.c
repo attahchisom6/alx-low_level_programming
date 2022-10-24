@@ -2,7 +2,7 @@
 
 /**
  * print_listint - A function to list the elements of an integer struct
- * head:start of node
+ * @h:start of node
  *
  * Return:number and list of elements in the link
  */
