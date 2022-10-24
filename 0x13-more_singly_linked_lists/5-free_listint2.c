@@ -3,7 +3,7 @@
 /**
  * free_listint2 - function to free a link
  * @head:pointer to a pointer to first node
- * 
+ *
  * Return:void
  */
 
