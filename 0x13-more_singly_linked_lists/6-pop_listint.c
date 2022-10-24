@@ -3,7 +3,7 @@
 /**
  * pop_listint - This functio  will delete a node from the
  * begining of a link
- * @h:pointer to a pointer to the firstnode of the link
+ * @head:pointer to a pointer to the firstnode of the link
  *
  * Return:link without the deleted node
  */
