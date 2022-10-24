@@ -22,27 +22,3 @@ size_t print_listint(const listint_t *h)
 	}
 	return (p);
 }
-
-int main(void)
-{
-	listint_t *head, *new;
-	size_t p;
-	listint_t hello = {8, NULL};
-
-	head = &hello;
-	new = malloc(sizeof(listint_t));
-	if (new == NULL)
-	{
-		printf("Error");
-		return (1);
-	}
-	new->n = 9;
-	new->next = head;
-	head = new;
-
-	p = print_listint(head);
-	printf("-> %zu elements\n", p);
-
-	free(new);
-	return (0);
-}
