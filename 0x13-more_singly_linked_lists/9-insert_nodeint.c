@@ -34,7 +34,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		/*we will now exclude case k = 0*/
 		/*i.e we  will start at case k + 1*/
 		temp = *head;
-		while (k + 1 < idx)
+		while (k < idx - 1)
 		{
 			temp = temp->next;
 			k++;
