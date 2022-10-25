@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * insert_nodeint - function to insert a node at a given position
+ * insert_nodeint_at_index - function to insert a node at a given position
  * if the losition exiats
  * @head:pointer to a pointer that points to first node
  * @idx:index to insert element
@@ -12,7 +12,7 @@
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	listint_t *new, *temp;
-	unsigned k = 0;
+	unsigned int k = 0;
 
 	new = malloc(sizeof(listint_t));
 	if (new == NULL)
