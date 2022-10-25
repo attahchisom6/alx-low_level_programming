@@ -1,25 +1,6 @@
 #include "lists.h"
 
 /**
- * node_len - function to get the size of a node
- * @h:pointer to first node
- *
- * Return:no elements in the nodw
- */
-
-int node_len(listint_t *h)
-{
-	int p;
-
-	while (h != NULL)
-	{
-		h = h->next;
-		p++;
-	}
-	return (p);
-}
-
-/**
  * insert_nodeint - function to insert a node at a given position
  * if the losition exiats
  * @head:pointer to a pointer that points to first node
@@ -40,7 +21,6 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	new->n = n;
 	new->next = NULL;
 
-	p = node_len(*head);
 	if (*head == NULL && idx != 0)
 		return (NULL);
 	else if (*head == NULL && idx == 0)
