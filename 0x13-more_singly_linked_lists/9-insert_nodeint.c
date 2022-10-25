@@ -1,47 +1,47 @@
 #include "lists.h"
+
 /**
- * insert_nodeint_at_index - This function inserts a
- * new node at given position
- * @head: The head node
- * @idx: The index of the list where new node is to be added
- * @n: The integer data of the new node
- * Return: The address of the new inserted node or NULL if failed
+ * insert_nodeint_at_index - function to insert a node at a given position
+ * if the losition exiats
+ * @head:pointer to a pointer that points to first node
+ * @idx:index to insert element
+ * @n:integer data to insert at new node
+ * Return:pointer to the inserted  node
  */
+
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	listint_t *node, *temp = *head;
-	size_t i = 0;
+	listint_t *new, *temp;
+	unsigned int k = 0;
 
-	node = malloc(sizeof(listint_t));
-	if (!node)
+	new = malloc(sizeof(listint_t));
+	if (new == NULL)
 		return (NULL);
+	new->n = n;
+	new->next = NULL;
 
-	node->n = n;
-	node->next = NULL;
-
-	if (!*head && !idx)
-	{
-		*head = node;
-		return (node);
-	}
-
-	else if (!*head && idx)
+	if (*head == NULL && idx != 0)
 		return (NULL);
-
-	else if (!idx)
+	else if (*head == NULL && idx == 0)
+		*head = new;
+	else if (*head != NULL && idx == 0)
 	{
-		node->next = temp;
-		*head = node;
-		return (node);
+		new->next = *head;
+		*head = new;
+	}
+		/*we will now exclude case k = 0*/
+		/*i.e we  will start at case k + 1*/
+	else
+	{
+		temp = *head;
+		while (k + 1 < idx)
+		{
+			temp = temp->next;
+			k++;
+		}
+		new->next = temp->next;
+		temp->next = new;
 	}
 
-	while (i < (idx - 1))
-	{
-		temp = temp->next;
-		i++;
-	}
-	node->next = temp->next;
-	temp->next = node;
-
-	return (node);
+	return (new);
 }
