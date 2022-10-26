@@ -21,9 +21,9 @@ size_t free_listint_safe(listint_t **h)
 		sub_val = *h - (*h)->next;
 		if (sub_val > 0)
 		{
-			*h = temp;
 			temp = (*h)->next;
 			free(*h);
+			*h = temp;
 			k++;
 		}
 		else
