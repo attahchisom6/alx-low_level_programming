@@ -1,41 +1,36 @@
 #include "lists.h"
-
 /**
- * print_listint_safe - function to print a linked list
- * safely with a loop
- * @head:pointer to first node of the list
- *
- * Return:number of nodes in the list
+ * print_listint_safe - function that prints a linked list with a loop safely.
+ * @head: pointer to the 1st node of the linked list
+ * Return: new_node
  */
-
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *node1 = NULL;
-	const listint_t *node2 = NULL;
-	size_t k1 = 0;
-	size_t k2;
+	const listint_t *tmp_n = NULL;
+	const listint_t *l_n = NULL;
+	size_t counter = 0;
+	size_t new_n;
 
-	node1 = head;
-	while (node1 != NULL)
+	tmp_n = head;
+	while (tmp_n)
 	{
-		printf("[%p] %d\n", (void *)node1, node1->n);
-		k1++;
-		node1 = node1->next;
-
-		node2 = head;
-		k2 = 0;
-		while (k2 < k1)
+		printf("[%p] %d\n", (void *)tmp_n, tmp_n->n);
+		counter++;
+		tmp_n = tmp_n->next;
+		l_n = head;
+		new_n = 0;
+		while (new_n < counter)
 		{
-			if (node1 == node2)
+			if (tmp_n == l_n)
 			{
-				printf("->[%p] %d\n", (void *)node1, node1->n);
-				return (k1);
+				printf("-> [%p] %d\n", (void *)tmp_n, tmp_n->n);
+				return (counter);
 			}
-			node2 = node2->next;
-			k2++;
+			l_n = l_n->next;
+			new_n++;
 		}
-		if (head == NULL)
+		if (!head)
 			exit(98);
 	}
-	return (k1);
+	return (counter);
 }
