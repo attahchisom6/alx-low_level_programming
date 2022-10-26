@@ -2,7 +2,7 @@
 
 /**
  * free_listint_safe - A function to free a list using loops
- * @head:pointer to a pointer that poi ts to the first node
+ * @h:pointer to a pointer that poi ts to the first node
  *
  * Return:size of list that was freed
  */
@@ -21,9 +21,9 @@ size_t free_listint_safe(listint_t **h)
 		sub_val = *h - (*h)->next;
 		if (sub_val > 0)
 		{
+			*h = temp;
 			temp = (*h)->next;
 			free(*h);
-			*h = temp;
 			k++;
 		}
 		else
@@ -34,6 +34,6 @@ size_t free_listint_safe(listint_t **h)
 			break;
 		}
 	}
-	*h = NULL;
+
 	return (k);
 }
