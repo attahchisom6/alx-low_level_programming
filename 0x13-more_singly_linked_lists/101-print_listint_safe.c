@@ -23,6 +23,7 @@ size_t print_listint_safe(const listint_t *head)
 		node1 = node1->next;
 
 		node2 = head;
+		k2 = 0;
 		while (k2 < k1)
 		{
 			if (node1 == node2)
