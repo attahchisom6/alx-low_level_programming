@@ -15,7 +15,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	unsigned int k = 0;
 
 	new = malloc(sizeof(listint_t));
-	if (new == NULL)
+	if (new == NULL && head == NULL)
 		return (NULL);
 	new->n = n;
 	new->next = NULL;
@@ -29,12 +29,12 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		new->next = *head;
 		*head = new;
 	}
-		/*we will now exclude case k = 0*/
-		/*i.e we  will start at case k + 1*/
+		/*we will now exclude case idx = 0*/
+		/*i.e we  will end at case idx - 1*/
 	else
 	{
 		temp = *head;
-		while (k + 1 < idx)
+		while (k < idx - 1)
 		{
 			temp = temp->next;
 			k++;
@@ -42,6 +42,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		new->next = temp->next;
 		temp->next = new;
 	}
+	temp = temp->bext;
 
 	return (new);
 }
