@@ -6,7 +6,8 @@
  *
  * Return:decimal equivalent of binary
  */
-  unsigned int binary_to_uint(const char *b)
+
+unsigned int binary_to_uint(const char *b)
 {
 	unsigned int p = 1, deci = 0;
 	int k = 0;
