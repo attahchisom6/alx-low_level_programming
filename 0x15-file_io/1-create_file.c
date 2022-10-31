@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * create - function to craete a file, if doesnt exist and add
+ * create_file - function to craete a file, if doesnt exist and add
  * content to it
  * @filename:name of file to be created
  * @text_content:strings to be written to file
