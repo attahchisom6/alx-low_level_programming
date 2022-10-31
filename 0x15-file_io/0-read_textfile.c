@@ -10,7 +10,7 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	size_t fd, k, p; /*where fd is field descriptor*/
+	ssize_t fd = 0, k = 0, p = 0; /*where fd is field descriptor*/
 	char *buffer;
 
 	if (filename == NULL || letters == 0)
