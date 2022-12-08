@@ -3,7 +3,7 @@
 /**
  * print_dlistint - function to print a double linked list
  * @h:pointer to the first node
- * 
+ *
  * Return:no of elements in the list
  */
 
