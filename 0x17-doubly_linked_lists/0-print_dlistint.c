@@ -12,8 +12,6 @@ size_t print_dlistint(const dlistint_t *h)
 	int k = 0;
 	const dlistint_t *last;
 
-	if (h == NULL)
-		return (k);
 	last = h;
 	while (last != NULL)
 		last = last->prev;
