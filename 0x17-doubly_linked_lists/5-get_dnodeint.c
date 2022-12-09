@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * get_nodeint_at_index - function to get a node at a given index
+ * get_dnodeint_at_index - function to get a node at a given index
  * @head:pointer to the first node
  * @index:index of each node
  *
