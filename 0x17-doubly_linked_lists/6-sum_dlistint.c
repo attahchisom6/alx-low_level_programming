@@ -3,7 +3,7 @@
 /**
  * sum_dlistint - function to add all the data in a linked list
  * @head:pointer to the first node
- * 
+ *
  * Return:sum of all the data in the list
  */
 
