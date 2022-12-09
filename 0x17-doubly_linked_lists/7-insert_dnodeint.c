@@ -2,6 +2,7 @@
 
 /**
  * insert_dnodeint_at_index - insert a node at the given index
+ * @h:pointer to the first node
  * @idx:index
  * @n:integer data to insert at the new node
  *
