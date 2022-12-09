@@ -1,29 +1,6 @@
 #include "lists.h"
 
 /**
- * dlistint_size - get size of double linked list
- * @head:pointer to the first node
- *
- * Return:size of DLL
- */
-
-/*size_t dlistint_size(dlistint_t *head)
-{
-	int size = 0;
-	dlistint_t *last;
-	
-	last = head;
-	while (last != NULL)
-		last = last->prev;
-	while (head != NULL)
-	{
-		head = head->next;
-		size++;
-	}
-	return (size);
-}*/
-
-/**
  * get_nodeint_at_index - function to get a node at a given index
  * @head:pointer to the first node
  * @index:index of each node
