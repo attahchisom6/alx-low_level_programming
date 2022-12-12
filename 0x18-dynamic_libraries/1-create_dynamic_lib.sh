@@ -1,2 +1,3 @@
 #!/usr/bin/bash
-gcc -std=gnu89 -shared -o liball.so *.o
+gcc -fPIC -c *.c
+gcc -shared -o liball.so *.o
