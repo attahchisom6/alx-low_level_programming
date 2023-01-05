@@ -35,7 +35,7 @@ void *my_calloc(unsigned long int size, unsigned long int nmemb)
 	unsigned long ssize;
 	void *buffer;
 
-	if (size == 0 || ssize == 0)
+	if (size == 0 || nmemb == 0)
 		return (NULL);
 	ssize = size * nmemb;
 
