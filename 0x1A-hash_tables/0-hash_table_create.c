@@ -20,7 +20,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 	}
 
 	table->size = size;
-	table->array = my_calloc(table->size, sizeof(hash_node_t));
+	table->array = calloc(table->size, sizeof(hash_node_t));
 
 	while (k < table->size)
 	{
