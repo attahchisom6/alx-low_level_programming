@@ -10,7 +10,7 @@
 void hash_table_print(const hash_table_t *ht)
 {
 	unsigned long int k = 0;
-	hash_node_t *head;
+	hash_node_t *head = NULL;
 	char *delim = "";
 
 	if (ht == NULL)
