@@ -5,7 +5,7 @@
  * @ht:pointe ht table
  * @key:string identifier
  * @value:string to be asssociated with key
- * 
+ *
  * Return: 1 on success, 0 otherwise
  */
 
