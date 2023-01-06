@@ -2,8 +2,8 @@
 
 /**
  * hash_table_get - function to get a value of a given key
+ * @ht: pointer to hash table
  * @key: the key we seek
- * @value: value of the key
  *
  * Return: pointer to the value if found else NULL
  */
