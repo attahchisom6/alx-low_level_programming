@@ -1,0 +1,9 @@
+#include "sort.h"
+
+int main(void)
+{
+	int arr[] = {1, 2, 3, 4, 5};
+
+	printf("%d\n", strlen((char *)arr));
+	return (0);
+}
