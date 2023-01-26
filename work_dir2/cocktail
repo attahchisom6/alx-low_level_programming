@@ -10,7 +10,7 @@
  * Return: void
  */
 
-void _swap(listint_t **n1, listint_t **n2, int sig)
+void _swap(listint_t **n1, listint_t **n2)
 {
 	listint_t *temp1, *temp2;
 
@@ -26,71 +26,75 @@ void _swap(listint_t **n1, listint_t **n2, int sig)
 		temp2->next->prev = temp1;
 	temp1->prev = temp2;
 	temp2->next = temp1;
-
-	if (sig == 0)
-		*n1 = temp2;
-	else
-		*n2 = temp1;
 }
 
 /**
  * head_sort - sorts a list in the forward direction in a DLL
  * @list:a double pointer to the head of the linked list
  * @ptt: a pointer to the largest element in the list
- * max_h:max limit of the list or array
  *
  * Return: void
  */
 
-void head_sort(listint_t **ptr, listint_t **max_h, listint_t **list)
+void head_sort(listint_t **list)
 {
-	listint_t *temp;
+	listint_t *temp, *ptr;
+	bool is_swapped = true;
 
-	temp = *ptr;
-	while (temp->n != *max_h && temp->next->n != *max_h)
+	temp = *list;
+	while (is_swapped == true)
 	{
+	while (temp->next != NULL)
+	{
+		is_swapped = false;
+		/*ptr = temp->next;*/
 		if (temp->n > temp->next->n)
 		{
-			_swap(&temp, &(temp->next), 0);
-
-			if (temp->prev == NULL)
-				*list = temp;
+			_swap(&temp, &(temp->next));
 			print_list(*list);
+			is_swapped = true;
 		}
-		temp = temp->next;
+		else
+			temp = temp->next;
 	}
-	*ptr = temp;
-	*list = temp;
-
+	if (is_swapped == false)
+		break;
+	}
 }
 
 /**
  * tail_sort - sort the list in backward direcfion in a DLL
  * @list: a double pointer to the first element of the list
  * @ptr:pointer pointing to the smallest element of the list
- * @min_t:min limit o the list or array
  *
  * Return: void
  */
 
-void tail_sort(listint_t **ptr, listint_t **min_t, listint_t **list)
+void tail_sort(listint_t **list)
 {
-	listint_t *temp;
+	listint_t *temp, *ptr;
+	bool is_swapped = true;
 
-	temp = *ptr;
-	while (temp ! *min_t && temp->prev != *min_t)
+	temp = *list;
+	while (is_swapped == true)
 	{
+	while (temp->prev != NULL)
+	{
+		is_swapped = false;
+		/*ptr = temp->prev;*/
 		if (temp->n < temp->prev->n)
 		{
 			_swap(&(temp->prev), &temp);
-			if (temp->prev->prev == NULL)
-				*list = temp->prev;
 			print_list(*list);
+			is_swapped = true;
 		}
-		temp = temp->prev;
+		else
+			temp = temp->prev;
 	}
-	*ptr = temp;
-	*list = temp;
+
+	if (is_swapped == false)
+		break;
+	}
 }
 
 /**
@@ -104,14 +108,9 @@ void tail_sort(listint_t **ptr, listint_t **min_t, listint_t **list)
 void cocktail_sort_list(listint_t **list)
 {
 	listint_t *ptr1, *ptr2, *mose;
-	listint *min_t, *max_h;
 	if (!list)
 		return;
 
-	ptr1 = ptr2 = NULL;
-	mose = *list;
-	do {
-		head_sort(&ptr1, &max_h, &mose);
-		tail_sort(&ptr2, &min_t, &mose);
-	} while (min_t != max_h);
+	head_sort(list);
+	tail_sort(list);
 }
