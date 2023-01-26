@@ -47,7 +47,7 @@ void head_sort(listint_t **ptr, listint_t **max_h, listint_t **list)
 	listint_t *temp;
 
 	temp = *ptr;
-	while (temp->n != *max_h && temp->next->n != *max_h)
+	while (temp != *max_h && temp->next != *max_h)
 	{
 		if (temp->n > temp->next->n)
 		{
@@ -59,8 +59,8 @@ void head_sort(listint_t **ptr, listint_t **max_h, listint_t **list)
 		}
 		temp = temp->next;
 	}
-	*ptr = temp;
-	*list = temp;
+	/*after all the above temp will now hold the biggest value*/
+	*ptr = *max_h = temp;
 
 }
 
@@ -78,40 +78,40 @@ void tail_sort(listint_t **ptr, listint_t **min_t, listint_t **list)
 	listint_t *temp;
 
 	temp = *ptr;
-	while (temp ! *min_t && temp->prev != *min_t)
+	while (temp != *min_t && temp->prev != *min_t)
 	{
 		if (temp->n < temp->prev->n)
 		{
-			_swap(&(temp->prev), &temp);
+			_swap(&(temp->prev), &temp, 1);
 			if (temp->prev->prev == NULL)
 				*list = temp->prev;
 			print_list(*list);
 		}
 		temp = temp->prev;
 	}
-	*ptr = temp;
-	*list = temp;
+	/*After all these temp will now hold the small value*/
+	*ptr = *min_t = temp;
 }
 
 /**
  * cocktail_sort_list - sorts a list using the cocktail algorithm,
  * whichvis a generalized case of Bubble sort algorithm
  * @list: double pointer to the first element of the list
- *
  * Return: void
  */
 
 void cocktail_sort_list(listint_t **list)
 {
-	listint_t *ptr1, *ptr2, *mose;
-	listint *min_t, *max_h;
+	listint_t *ptr;
+	listint_t *min_t, *max_h;
 	if (!list)
 		return;
 
-	ptr1 = ptr2 = NULL;
-	mose = *list;
+	min_t = max_h = NULL;
+
+	ptr = *list;
 	do {
-		head_sort(&ptr1, &max_h, &mose);
-		tail_sort(&ptr2, &min_t, &mose);
+		head_sort(&ptr, &max_h, list);
+		tail_sort(&ptr, &min_t, list);
 	} while (min_t != max_h);
 }
