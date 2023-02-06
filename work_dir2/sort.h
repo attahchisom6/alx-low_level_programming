@@ -42,4 +42,10 @@ void shell_sort(int *array, size_t size);
 /*cocktail sort algorithimic function*/
 void cocktail_sort_list(listint_t **list);
 
+/*counting sort algorithimic function*/
+void counting_sort(int *array, size_t size);
+
+/*merge sort algorithimic function*/
+void merge_sort(int *array, size_t size);
+
 #endif
