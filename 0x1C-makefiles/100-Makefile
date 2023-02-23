@@ -5,7 +5,7 @@
 # 	OBJ. all .o files
 # 	NAME: The name of the executable
 # 	RM: this program delete files
-# 	CFLAG: favourite cflags
+# 	CFLAGS: favourite cflags
 
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra -pedantic
@@ -27,4 +27,4 @@ oclean:
 
 fclean: clean oclean
 
-re: oclean all
+re: fclean all
