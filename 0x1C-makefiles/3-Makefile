@@ -1,0 +1,30 @@
+#The all rule build ur executable
+#variables:
+#	CC: The compiler
+#	SRC: ur .c files
+#	OBJ: The .o files
+#	NAME: Name of the executable
+#	RM: The program to delete files
+
+CC = gcc
+SRC = main.c school.c
+OBJ = $(SRC:.c=.o)
+NAME = school
+RM = rm -f
+
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+#Deletes all emacs and Vim temporary files along with the executable
+clean:
+	$(RM) *~ $(NAME)
+
+#Delete the object files
+oclean:
+	$(RM) $(OBJ)
+
+#delete all emacs and vim temporaryvfiles, the executable and the object files
+fclean: clean oclean
+
+#recompilation of the source files
+re: oclean all
