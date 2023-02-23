@@ -1,10 +1,20 @@
+# all: This rule builds your executable
+# variables:
+# 	CC: the compiler
+# 	SRC: all your .c files
+# 	OBJ. all .o files
+# 	NAME: The name of the executable
+# 	RM: this program delete files
+# 	CFLAGS: favourite cflags
+
 CC = gcc
+CFLAGS = -Wall -Werror -Wextra -pedantic
 SRC = main.c school.c
 OBJ = $(SRC:.c=.o)
 NAME = school
-CFLAGS = -Wall -Werror -Wextra -pedantic
 
 .PHONY: all clean oclean fclean re
+
 all: m.h $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
