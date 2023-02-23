@@ -6,6 +6,7 @@ def island_perimeter(grid):
     """function to get the perimwter of an islor described in a grid"""
 
     perimeter = 0
+
     """
     h_link reperesent horizontal link or connection i.e rows
     v_link: represent vertical link or connection i.e column
@@ -17,14 +18,14 @@ def island_perimeter(grid):
     for p in range(h_link):
         for k in range(v_link):
             if grid[p][k] == 1:
-                if p == 0 or grid[-1][k] == 0:
+                if (p - 1) == -1 or grid[p - 1][k] == 0:
                     perimeter += 1
-                if p == 0 or grid[1][k] == 0:
+                if (p + 1) == h_link or grid[p + 1][k] == 0:
                     perimeter += 1
 
-                if k == 0 or grid[p][-1] == 0:
+                if (k - 1) == -1 or grid[p][k - 1] == 0:
                     perimeter += 1
-                if k == 0 or grid[p][1] == 0:
+                if (k + 1) == v_link or grid[p][k + 1] == 0:
                     perimeter += 1
 
     return perimeter
