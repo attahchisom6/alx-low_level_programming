@@ -7,8 +7,8 @@
 # we wish to recompile the updated source file
 
 CC = gcc
-SRC =  school.c main.c
-OBJ = $(SRC:.c = .o) #updating the .c files to .o files for recompilation
+SRC = school.c main.c
+OBJ = $(SRC:.c=.o) #updating the .c files with .o files for recompilation
 NAME = school
 
 all: $(OBJ)
