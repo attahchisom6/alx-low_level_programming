@@ -1,0 +1,15 @@
+#all: this rule buuld all executables
+#variables:
+#	CC: compiler
+#	SRC: c files to compile
+#	OBJ: the object files
+#	NAME: The name of the executables
+# we wish to recompile the updated source file
+
+CC = gcc
+SRC =  school.c main.c
+OBJ = $(SRC:.c = .o) #updating the .c files to .o files for recompilation
+NAME = school
+
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
