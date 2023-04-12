@@ -1,7 +1,8 @@
 #include "search_algos.h"
 
 /**
- * liner_search - a function that searches for a value in a an array using a linear search
+ * linear_search - a function that searches for a value in a an array
+ * using a linear search
  * linear_search - a function that searches for a value in a an array using
  * a linear search
  * algorithm
