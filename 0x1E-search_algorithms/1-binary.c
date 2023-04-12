@@ -1,8 +1,8 @@
 #include "search_algos.h"
 
 /**
- * binary_search - search the array by iteratively dividing it into two parts as
- * the program runs
+ * binary_search - search the array by iteratively dividing it into two parts
+ * as the program runs
  * @array: array of integers
  * @size:number of elements in the array
  * @value: value whose index we seek in the array
