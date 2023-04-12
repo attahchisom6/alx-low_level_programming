@@ -2,6 +2,8 @@
 
 /**
  * liner_search - a function that searches for a value in a an array using a linear search
+ * linear_search - a function that searches for a value in a an array using
+ * a linear search
  * algorithm
  * @array: an array of integers
  * @size:number of elements in the array
