@@ -1,8 +1,8 @@
 #include "search_algos.h"
 
 /**
- * binary_search - search the array by iteratively dividing it into two parts as
- * the program runs
+ * binary_search - search the array by iteratively dividing it into two parts
+ * as the program runs
  * @array: array of integers
  * @size:number of elements in the array
  * @value: value whose index we seek in the array
@@ -22,7 +22,7 @@ int binary_search(int *array, size_t size, int value)
 	while (start <= end)
 	{
 		mid = (start + end) / 2;
-		printf("searching in array: ");
+		printf("Searching in array: ");
 		for (k = start; k < end; k++)
 			printf("%d, ", array[k]);
 		printf("%d\n", array[k]);
