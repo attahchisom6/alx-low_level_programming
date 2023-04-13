@@ -47,7 +47,7 @@ int _binary_search(int *array, size_t start, size_t endd, int value)
 
 int exponential_search(int *array, size_t size, int value)
 {
-	size_t k, low = 0, expo = 1;
+	size_t low = 0, expo = 1;
 	int output;
 
 	if (!array)
