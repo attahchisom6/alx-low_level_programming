@@ -1,12 +1,14 @@
 #include "search_algos.h"
 
 /**
- * binary_recursion - a function that searcjes an array recursively using binary
+ * binary_recursion - a function that searcjes an array recursively using
+ * binary
  * search making sure to get the index of the first occirence of the valu
  * @array: pointer to tbe first element in the array
  * @start: begining index of the array
  * @end: ending index of the array
  * @value: value to search in the array
+ * Return: index of the value we seek
  */
 
 int binary_recursion(int *array, size_t start, size_t end, int value)
