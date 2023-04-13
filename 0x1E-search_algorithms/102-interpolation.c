@@ -1,7 +1,8 @@
 #include "search_algos.h"
 
 /**
- * interpolation_search - search a uniformly distribued array, using interpolation
+ * interpolation_search - search a uniformly distribued array, using
+ * interpolation
  * algprith
  * @array: pointer to the aarrau
  * @size:no of elements in the array
