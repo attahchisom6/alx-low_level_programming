@@ -70,6 +70,4 @@ int exponential_search(int *array, size_t size, int value)
 	if (output != -1)
 
 		return (output);
-
-	return (-1);
 }
