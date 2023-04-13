@@ -50,7 +50,7 @@ int exponential_search(int *array, size_t size, int value)
 	size_t k, low = 0, expo = 1;
 	int output;
 
-	if (!array || !size)
+	if (!array)
 		return (-1);
 
 	while (expo < size && array[expo] < value)
