@@ -10,7 +10,7 @@
  * Return: index of value, else -1
  */
 
-int  _binary_search(int *array, size_t start, size_t endd, int value)
+int _binary_search(int *array, size_t start, size_t endd, int value)
 {
 	size_t mid = 0, k, end = endd - 1;
 
