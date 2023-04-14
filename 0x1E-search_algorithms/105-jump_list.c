@@ -35,7 +35,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 
 	while (base_node->index < jump->index)
 	{
-		if (base_node->index < size)
+		if (base_node->n < value)
 		{
 			printf("Value checked at index [%ld] = [%d]\n", base_node->index,
 					base_node->n);
