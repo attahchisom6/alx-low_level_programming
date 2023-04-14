@@ -37,12 +37,11 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 		printf("Value found between indexes [%zu] and [%zu]\n", temp->index, temp->express->index);
 	}
 	else
-		printf("Value found between indexes [%zu] and [%zu]", temp->index,
-				temp->express->index);
+		printf("Value found between indexes [%zu] and [%zu]\n", temp->index, stop->index);
 
 	while (temp != stop && temp->n < value)
 	{
-		printf("Value checked at index [%zu] = [%d]", temp->index, temp->n);
+		printf("Value checked at index [%zu] = [%d]\n", temp->index, temp->n);
 		temp = temp->next;
 	}
 	printf("Value checked at index [%zu] = [%d]", temp->index, temp->n);
