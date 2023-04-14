@@ -1,0 +1,27 @@
+#include "search_algos.h"
+
+/**
+ * jump_list - function to search a list for a value using jump sort algorithm
+ * @list: pointer to the head of the linked list
+ * @size: number of nodes in the linked list
+ * @value: value to search in the list
+ *
+ * Return: index of the value when found
+ */
+
+listint_t *jump_list(listint_t *list, size_t size, int value)
+{
+	listint_t *temp1, *temp2;
+	size_t step = sqrt(size);
+
+	if (!list)
+		return (NULL);
+
+	while (list)
+	{
+		temp1 = list;
+		printf("Value checked at index [%zu] = [%d]", list->index, list->n);
+		list = list->next;
+	}
+
+	printf("Found %d at index: %d", 
