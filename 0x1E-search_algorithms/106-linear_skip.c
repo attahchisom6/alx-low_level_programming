@@ -1,6 +1,7 @@
 #include "search_algos.h"
 
 /**
+ * linear_skip - searches a value in array, using the linear skip algorithm
  * @list - pointer to the head of the list to search for a value
  * @value: value to search for
  *
@@ -9,9 +10,9 @@
 
 skiplist_t *linear_skip(skiplist_t *list, int value)
 {
-	skiplist_t *temp = NULL;
+	skiplist_t *temp = NULL, *stop;
 
-	if (!list || !size)
+	if (!list)
 		return (NULL);
 
 	temp = list;
@@ -23,24 +24,28 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 	}
 
 	stop = temp;
-	/*Try to to check if the curent value of node we are at is the desired port*/
-	/*else the the port is likely to contain values out of the range of interest*/
+	/*The current node 'stop'  we are at is the desired port. Now try to check if*/
+	/*value is contained within a node in this port by tranvesing linearly*/
+	/*value should be contained between 'stop' and the other express nodes*/
+	/*else the the port is likely to contain values out of the range of interests*/
 	while (stop && stop->express != stop->next)
-	{
-		printf("Value checked at index [%zu] = [%d]\n", stop->index, stop->n);
-		printf("Value found between indexes [%zu] and [%zu]\n", temp->index, stop->index);
 		stop = stop->next;
+
+	if (temp->exress)
+	{
+		printf("Value checked at index [%zu] = [%d]\n", temp->express->index, temp->express->n);
+		printf("Value found between indexes [%zu] and [%zu]\n", temp->index, temp->express->index);
 	}
 	else
 		printf("Value found between indexes [%zu] and [%zu]", temp->index,
-				stop->indx);
+				temp->express->index);
 
 	while (temp != stop && temp->n < value)
 	{
 		printf("Value checked at index [%zu] = [%d]", temp->index, temp->n);
 		temp = temp->next;
 	}
-	printf("Value checked at index [8] = [18]", temp->index, temp->n);
+	printf("Value checked at index [%zu] = [%d]", temp->index, temp->n);
 
 	if (temp == stop)
 		return (NULL);
