@@ -42,7 +42,8 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 			if (base_node->n == value)
 				return (base_node);
 		}
-		base_node = base_node->next;
+		if (base_node->next)
+			base_node = base_node->next;
 	}
 	return (NULL);
 }
