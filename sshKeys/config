@@ -1,0 +1,17 @@
+Host MoseServer
+	passwordAuthentication no
+
+Host MoseServer
+	Hostname 54.144.221.216
+	User ubuntu
+	identityFile ~/.sshh/school
+
+Host MoseServer2
+	Hostname 54.209.215.95
+	User ubuntu
+	identityFile ~/.sshh/school
+
+Host MoseServer3
+	Hostname 100.25.102.128
+	User ubuntu
+	identityFile ~/.sshh/school
